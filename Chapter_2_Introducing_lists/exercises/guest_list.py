@@ -40,4 +40,12 @@ for guest in guests:
     message = f"Hello, {guests[index]}! You're still invited."
     print(message)
 
+message = f"I have {len(guests)} invited."
+print(message)
+
+print(guests)
+del guests[0]
+del guests[0]
+print(guests)
+
 print("\n\t End of the program")
