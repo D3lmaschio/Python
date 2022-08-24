@@ -11,14 +11,12 @@ print("\n")
 evens = list(range(2, 11, 2))
 print(evens)
 
-
 # Firt 10 square numbers list:
 squares = []
 for number in range(1, 11):
     squares.append(number ** 2)
 
 print(f"\n10 first square numbers: {squares}")
-
 print(min(squares))
 print(max(squares))
 print(sum(squares))
