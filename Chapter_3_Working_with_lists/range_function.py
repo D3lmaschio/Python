@@ -18,3 +18,7 @@ for number in range(1, 11):
     squares.append(number ** 2)
 
 print(f"\n10 first square numbers: {squares}")
+
+print(min(squares))
+print(max(squares))
+print(sum(squares))
