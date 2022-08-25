@@ -9,3 +9,5 @@ print(city_2)
 city_3 = 'new york' not in brasilian_cities
 
 print(city_3)
+
+print(len(brasilian_cities))
