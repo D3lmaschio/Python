@@ -1,0 +1,5 @@
+Dictionaries
+ - Mapeamento dos computadores e seus respectivos componentes e nº de patrimônio.
+ - Mapeamento dos de cada computador(agora como um dict) e um id ou talvez nº de patrimônio.
+ - Estoque de hardwares, impressoras...
+
