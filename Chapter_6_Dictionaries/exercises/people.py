@@ -23,7 +23,6 @@ people = [person_00, person_01, person_02]
 
 for person in people:
     for info, value in person.items():
-
         if info == 'first name':
             first_name = value
         elif info == 'last name':
