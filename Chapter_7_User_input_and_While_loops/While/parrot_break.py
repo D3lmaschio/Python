@@ -1,6 +1,3 @@
-from telnetlib import BRK
-
-
 prompt = "\nHello, I'm the parrot Jerry!"
 prompt += "\nTell me something, and I will repeat it back  to you:\n"
 
