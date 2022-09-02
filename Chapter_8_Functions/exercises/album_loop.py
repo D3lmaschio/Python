@@ -1,4 +1,8 @@
 def make_album(artist, album, songs=None):
+    """
+    Make an dictionary of album with given arguments
+    and returns this dictionary.
+    """
     if songs:
         return {artist: album, 'songs': songs, }
     else:

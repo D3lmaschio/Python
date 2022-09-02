@@ -1,9 +1,9 @@
 # This is a bad program.
-def make_dict(key='', value=''):
-    if key and value:
-        return {key: value, }
-    elif key and not value:
-        return {key: ''}
+def make_dict(chave='', valor=''):
+    if chave and valor:
+        return {chave: valor, }
+    elif chave and not valor:
+        return {chave: ''}
     else:
         return {}
 
