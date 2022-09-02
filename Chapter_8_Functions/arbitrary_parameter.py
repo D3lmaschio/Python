@@ -1,5 +1,9 @@
 # The parameter to_send doesn't receive lists.
 def send_messages(sent, *to_send):
+    """
+    This program send messages. (Append *args to a list of sent messages)
+    and return this list.
+    """
     for message in to_send:
         sent.append(message)
 

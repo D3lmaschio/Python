@@ -14,7 +14,7 @@ def print_dict(**kwargs):
     Print a neatly formatted dictionary.
     """
     if kwargs:
-        for key, value in kwargs:
+        for key, value in kwargs.items():
             print(f"{key}: {value}")
     else:
         return None

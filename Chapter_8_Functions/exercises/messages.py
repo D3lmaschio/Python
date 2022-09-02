@@ -1,4 +1,7 @@
 def show_messages(to_show):
+    """
+    Print the items of a list.
+    """
     if to_show:
         for message in to_show:
             print(f"> {message.title()}\n")
