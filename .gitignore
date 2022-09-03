@@ -1,5 +1,5 @@
 __pycache__/
-.vscode/
+.vscode/*.*
 ideias.txt
 lol.txr
 *.pyc

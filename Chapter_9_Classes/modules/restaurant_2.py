@@ -23,7 +23,7 @@ class Restaurant:
 
     def get_served(self):
         print(f"{self.name} restaurant has served "
-              f"{self.number_served} consumers.")
+              f"{self.number_served} consumers today.")
 
 
 restaurant = Restaurant("Delmaschio's", 'Italian')

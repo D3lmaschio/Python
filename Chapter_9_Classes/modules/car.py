@@ -19,7 +19,7 @@ class Car:
             print("You can't roll back an odometer!")
 
     def increment_odometer(self, miles):
-        """Add the given amout to the odometer reading."""
+        """Add the given amount to the odometer reading."""
         if miles >= 0:
             self.odometer_reading += miles
         else:
@@ -31,9 +31,41 @@ class Car:
         return long_name
 
     def read_odometer(self):
-        """Print a statement showings the car's milleage."""
+        """Print a statement showing the car's milleage."""
         print(f"This car has {self.odometer_reading} miles on it.")
 
+
+class EletricCar(Car):
+    """Representation of a car specific an eletric vehicle."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize the attributes of parent class.
+        Then initialize attributes specific to an eletric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = 75
+
+    def decrease_battery(self, used_energy):
+        """Remove the given amount of the battery."""
+        self.battery -= used_energy
+
+    def increase_battery(self, charge):
+        """Add the given amount to the battery."""
+        self.battery += charge
+
+    def get_battery(self):
+        """Print a statement showing the battery's percentage."""
+        print(f"{self.battery}%")
+
+
+tesla = EletricCar('tesla', 'tesla s', 2019)
+print(tesla.get_descriptive_name())
+tesla.get_battery()
+tesla.decrease_battery(5)
+tesla.get_battery()
+tesla.increase_battery(10)
+tesla.get_battery()
 
 my_car = Car('Ford', 'Camaro', '2012')
 print(my_car.get_descriptive_name())
