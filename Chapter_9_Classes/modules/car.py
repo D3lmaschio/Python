@@ -7,6 +7,16 @@ class Car:
         self.model = model
         self.year = year
         self.odometer_reading = 0
+        self.gas_tank = 50
+
+    def show_gas_tank(self):
+        print(f"Fuel: {self.gas_tank}L")
+
+    def empty_gas_tank(self, liters):
+        self.gas_tank -= liters
+
+    def fill_gas_tank(self, liters):
+        self.gas_tank += liters
 
     def update_odometer(self, mileage):
         """
@@ -46,6 +56,10 @@ class EletricCar(Car):
         super().__init__(make, model, year)
         self.battery = 75
 
+    def fill_gas_tank(self, liters):
+        """Electric cars don't have gas tanks."""
+        print("This car doesn't need a gas tank!")
+
     def decrease_battery(self, used_energy):
         """Remove the given amount of the battery."""
         self.battery -= used_energy
@@ -66,6 +80,9 @@ tesla.decrease_battery(5)
 tesla.get_battery()
 tesla.increase_battery(10)
 tesla.get_battery()
+# Inheriting methods or not
+tesla.fill_gas_tank(10)
+tesla.show_gas_tank()
 
 my_car = Car('Ford', 'Camaro', '2012')
 print(my_car.get_descriptive_name())
