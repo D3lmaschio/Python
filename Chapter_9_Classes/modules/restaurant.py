@@ -1,8 +1,8 @@
 class Restaurant:
 
-    def __init__(self, res_name, cuisine_type):
+    def __init__(self, res_name, cuisine_type=None):
         """
-        Intialize the class with restaurant name and cuisine type 
+        Intialize the class with restaurant name and cuisine type
         as arguments.
         """
         self.name = res_name
@@ -15,15 +15,25 @@ class Restaurant:
         print(f"{self.name} is now open!")
 
 
-my_restaurant_0 = Restaurant("Delmaschio's", "Italian")
-my_restaurant_1 = Restaurant("French Fries", "French")
-my_restaurant_2 = Restaurant("Bom Prato", "Brasilian")
+class IceCreamStand(Restaurant):
+    """A Class to represent a Ice Cream Stand."""
 
-my_restaurant_0.describe_restaurant()
-my_restaurant_0.open_restaurant()
+    def __init__(self, res_name, cuisine_type=None):
+        """
+        Initializing the attributes if Restaurant instance and
+        IceCreamStand itself.
+        """
+        super().__init__(res_name, cuisine_type)
+        self.flavors = []
 
-my_restaurant_1.describe_restaurant()
-my_restaurant_1.open_restaurant()
+    def add_flavors(self, *flavor):
+        if flavor:
+            for each in flavor:
+                self.flavors.append(each)
+        else:
+            pass
 
-my_restaurant_2.describe_restaurant()
-my_restaurant_2.open_restaurant()
+    def get_flavors(self):
+        print("\nWe've these flavors:")
+        for flavor in self.flavors:
+            print(f"\t{flavor.title()}")
