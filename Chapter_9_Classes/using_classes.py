@@ -1,5 +1,5 @@
-from modules.dog import Dog
-from modules.restaurant import *
+from Chapter_9_Classes.modules.py_dog import Dog
+from Chapter_9_Classes.modules.py_restaurant import *
 
 my_dog = Dog('Mel', 5)
 

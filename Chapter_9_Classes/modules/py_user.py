@@ -28,26 +28,3 @@ class User:
     def greet_user(self):
         """Display greetings =)"""
         print(f"Welcome, {self.last_name.title()}")
-
-
-user_00 = User("Matheus", "Delmaschio")
-user_01 = User("Yasmin", "Delmaschio")
-user_02 = User("Sara", "Delmaschio")
-
-user_00.describe_user()
-user_00.greet_user()
-
-user_01.describe_user()
-user_01.greet_user()
-
-user_02.describe_user()
-user_02.greet_user()
-
-print(user_00.login_attempts)
-user_00.increment_login_attempts()
-user_00.increment_login_attempts()
-user_00.increment_login_attempts()
-user_00.increment_login_attempts()
-print(user_00.login_attempts)
-user_00.reset_login_attemps()
-print(user_00.login_attempts)

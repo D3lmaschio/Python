@@ -1,8 +1,9 @@
 {
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.pylintArgs": [
         "--disable=C0111"
     ],
-    "terminal.integrated.fontFamily": "FiraCode NF"
+    "terminal.integrated.fontFamily": "FiraCode NF",
+    "python.linting.flake8Enabled": true
 }
