@@ -1,5 +1,5 @@
 """This module should be used to represent any vehicle."""
-from modules import py_battery
+from modules.py_battery import Battery
 
 
 class Car:
@@ -60,7 +60,7 @@ class EletricCar(Car):
         @battery_capacity: must be defined in killowatts.
         """
         super().__init__(make, model, year)
-        self.battery = py_battery.Battery(battery_size)
+        self.battery = Battery(battery_size)
 
     def fill_gas_tank(self, liters):
         pass
