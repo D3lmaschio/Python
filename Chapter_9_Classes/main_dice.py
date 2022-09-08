@@ -16,15 +16,14 @@ while True:
         else:
             times = 1
 
-        result = dice.roll_dice(times)
-        if times > 1:
-            print("\nResult of {time}rolls:")
-            for time in times:
+        results = dice.roll_dice(times)
+        if type(results) == dict:
+            print(f"\nResult of {times} rolls:")
+            for time, result in results.items():
                 print(f"\tRoll {time}: {result}")
-        elif times > 0:
-            print(f"Roll result: {result}")
         else:
             print(0)
+
     else:
         print("\nBye\n")
         break

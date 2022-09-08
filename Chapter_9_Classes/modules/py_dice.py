@@ -20,12 +20,15 @@ class Dice:
             self.sides = 3
 
     def roll_dice(self, times=1):
-        """Simulates rolling a dice. Returns the result of roll."""
-        if times > 0:
+        """
+        Simulates rolling a dice. Returns the result of roll.
+        - If times > 1 returns a list
+        - else return a int
+        """
+        if times < 2 and times > 0:
             result = randint(1, self.sides)
         else:
-            result = []
-            for time in range(0, times)
-            result.append(randint(1, self.sides))
-
+            result = {}
+            for time in range(1, times + 1):
+                result[time] = randint(1, self.sides)
         return result
