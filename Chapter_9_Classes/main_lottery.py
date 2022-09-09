@@ -1,15 +1,13 @@
-from random import choice
+from modules import py_lottery as lottery
 
-lottery_sequence = [16, 24, 32, 46, 53, 36, 63,
-                    2, 7, 71, 'd', 'h', 'k', 'o',
-                    'y'
-                    ]
+lottery = lottery.Lottery()
 
-lucky_sequence = 'Sequence: '
-for i in list(range(0, 4)):
-    lucky_sequence += str(choice(lottery_sequence)) + ", "
-    
+entries = [24, 14, 63, 'b']
 
-print(f"This is the luck sequence:\n{lucky_sequence}"
-      "\nAnybody that have a ticket with this sequence"
-      "is de Winner.")
+my_ticket = lottery.ticket(entries)
+results = lottery.check(my_ticket)
+
+
+print(f"Your ticket:\n {my_ticket}\n"
+      f"Lucky sequence:\n - {lottery.lucky_entry}\n"
+      f"Result:\n - {results}")

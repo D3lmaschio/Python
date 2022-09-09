@@ -9,28 +9,45 @@ LUCKY_TICKET = [16, 24, 32, 46, 53, 36, 63,
 class Lottery:
     """A class to represent a lottery game."""
 
-    def __init__(self, sequence_size=4):
+    def __init__(self, entry_len=4):
         """Generates the default lucky ticket."""
-        self.lucky_sequence = {}
-        self.seq_size = sequence_size
-        for seq in list(range(0, self.sequence_size)):
-            self.lucky_sequence[seq] = choice(LUCKY_TICKET)
+        self.lucky_entry = {}
+        self.entry_len = entry_len
+        for entry in list(range(0, self.entry_len)):
+            self.lucky_entry[entry] = choice(LUCKY_TICKET)
 
-    def generate(self, sequence_size):
-        """Generates the lucky ticket with given sequence amount."""
-        self.seq_size = sequence_size
-        for seq in list(range(0, self.seq_size)):
-            self.lucky_sequence[seq] = choice(LUCKY_TICKET)
+    def generate(self, entry_len=4):
+        """Generates the lucky ticket with given length."""
+        self.entry_len = entry_len
+        for entry in list(range(0, self.entry_len)):
+            self.lucky_entry[entry] = choice(LUCKY_TICKET)
 
-    def check(self, **ticket):
-        """Returns the results of given ticket."""
+    def check(self, ticket={}):
+        """
+        Returns the results of given ticket.
+        - Will return None if no entries are passed.
+        """
         results = {}
-        for seq, lucky_value in ticket.items():
-            seq = int(seq)
-            results[seq] = self.lucky_sequence.get(seq) == lucky_value
-
-        return results
-
-    def ticket(self, *ticket):
         if ticket:
-            for seq in range(0, self.seq_size):
+            for entry, value in ticket.items():
+                entry = int(entry)
+                results[entry] = self.lucky_entry.get(entry) == value
+
+            return results
+        else:
+            return False
+
+    def ticket(self, entries=[]):
+        """
+        Returns a ticket with given entries.
+        - If entry len doesn't match with instance len will return None.
+        """
+        ticket = {}
+        if len(entries) == self.entry_len:
+            for entry in range(0, self.entry_len):
+                value = entries[entry]
+                ticket[entry] = value
+
+            return ticket
+        else:
+            return None

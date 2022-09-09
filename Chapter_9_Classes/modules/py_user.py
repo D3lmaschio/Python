@@ -28,3 +28,4 @@ class User:
     def greet_user(self):
         """Display greetings =)"""
         print(f"Welcome, {self.last_name.title()}")
+ 
