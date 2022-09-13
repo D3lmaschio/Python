@@ -18,6 +18,8 @@ class FileReader:
             with open(self.filename) as file_object:
                 self.content = file_object.read()
 
+        return self
+
     # Making a list of each line in the file.txt
     def get_lines(self):
         """Return each line of the content in a list."""
@@ -28,6 +30,13 @@ class FileReader:
                 return file_object.readlines()
         else:
             return None
+
+    def get_string(self):
+        string = ''
+        for line in self.get_lines():
+            string += line.strip()
+
+        return string
 
     def get_content(self):
         """Return the content of filename."""
