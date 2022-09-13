@@ -64,3 +64,4 @@ with open('files/learning_python.txt') as fo:
 lines_c = [line.replace('python', 'C').rstrip() for line in lines]
 for line in lines_c:
     print(line)
+g
