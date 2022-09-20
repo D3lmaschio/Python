@@ -15,7 +15,7 @@ class FileReader:
         """
         if filename:
             self.filename = filename
-            with open(self.filename) as file_object:
+            with open(self.filename, encoding='UTF-8') as file_object:
                 self.content = file_object.read()
 
         return self
@@ -24,7 +24,7 @@ class FileReader:
     def get_lines(self):
         """Return each line of the content in a list."""
         if self.content:
-            with open(self.filename) as file_object:
+            with open(self.filename, encoding='UTF-8') as file_object:
                 # return [line for line in file_object]
                 # More simple:
                 return file_object.readlines()
