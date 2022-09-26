@@ -5,5 +5,5 @@
         "--disable=C0111"
     ],
     "terminal.integrated.fontFamily": "FiraCode NF",
-    "python.linting.flake8Enabled": false
+    "python.linting.flake8Enabled": false,
 }

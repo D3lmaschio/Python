@@ -1,5 +1,5 @@
-from modules.file_reader import FileReader
 from time import sleep
+from modules.reader import FileReader
 
 
 reader = FileReader()
