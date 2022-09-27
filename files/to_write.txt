@@ -1,0 +1,1 @@
+Isso foi escrito através de um programa Python em 18/09/2022.
