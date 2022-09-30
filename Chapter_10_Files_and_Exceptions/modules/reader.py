@@ -34,7 +34,7 @@ class FileReader:
                 with open(self.filename, encoding='UTF-8') as f:
                     self.content = f.read()
                     
-        return self.content
+        return self
 
     # Making a list of each line in the file.txt
     def get_lines(self):

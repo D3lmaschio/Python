@@ -1,31 +1,36 @@
 """Docstring"""
 
+from datetime import datetime
 import json
+
 
 class Writer:
     """This class should be used to write files."""
 
     def __init__(self):
         """Initialize the default variables."""
-        self.filename = ''
+        self.filename = None
         self.content = None
 
     def set_filename(self, path):
         """Set the filename"""
         self.filename = path
 
-    def write(self, arg, filename=''):
+    def write(self, arg, filename='', newline=None):
         """Write the given args to the given path or default path."""
         if not filename:
-            filename = self.filename
+            # Set a default file name.
+            filename = 'files/FILE_' + datetime().now().isoformat('T')
 
-        with open(filename, 'a', encoding='UTF-8') as f:
+        with open(filename, 'a', encoding='UTF-8', newline=newline) as f:
+            # Supports: JSON and formats like txt.
             if '.json' in filename:
                 json.dump(arg, f)
             else:
                 f.write(arg)
 
         with open(filename, 'r', encoding='UTF-8') as f:
+            # Supports: JSON and formats like txt.
             if '.json' in filename:
                 self.content = json.load(f)
             else:

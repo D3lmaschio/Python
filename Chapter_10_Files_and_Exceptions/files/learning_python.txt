@@ -1,8 +1,0 @@
-In python you can receive a input of a user and use this input
-In python you can read files and use the content of these files.
-In python you can make different types of data structures like lists, tuples, dictionaries and sets.
-In python you can loop through data structures and work with each element.
-In python you can make functions to do tasks for you receiving nothing ou more than one arguments.
-In python you can use classes to represent objects of real word.
-In python you can use If or Else to decide the way of program will take.
-

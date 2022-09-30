@@ -1,22 +1,48 @@
 """"""
-from reader import FileReader
-from writer import Writer
+from os.path import exists as path_exists
+from .reader import FileReader
+from .writer import Writer
+
+
+USR_PATH = 'files/username.txt'
+
+
+def create_user():
+    """Ask for username"""
+    while True:
+        # Ask for user to enter his username
+        username = input("Enter your username: ")
+
+        # Verifying if some text is entered
+        if username:
+            # Writing the text to the file USR_PATH in .json
+            Writer().write((username + '\n'), USR_PATH)
+            print(f"I'll remember you {username}")
+            break
+        else:
+            print("\nError: No text was given. Please enter your username.")
+            continue
+
+
+def user_exists(username):
+    """Verify if given username exists in username.json"""
+    if path_exists(USR_PATH):
+        usernames = FileReader().read(USR_PATH).get_content()\
+                                               .replace('\n', '')
+        if usernames:
+            return username if username in usernames else None
+    return None
 
 
 def greet_user():
-    filename = 'files/username.json'
-    try:
-        username = FileReader().read(filename)
-    except FileNotFoundError:
-        # If username doesn't exist
-        while True:
-            inp_name = input("What's your name?\n-> ")
-            if inp_name:
-                Writer().write(inp_name, filename)
-                print(f"I'll remember you {inp_name}")
-                break
-            else:
-                print("\nError: No text was given. Please enter your name.")
-                continue
+    """Greets the user."""
+    inp_username = input("Enter your username: ")
+
+    username = user_exists(inp_username)
+    if username:
+        print(f"\nWelcome back, Mr(s).{username.rstrip().title()}!")
     else:
-        print(f'Hi, {username}!')
+        # If username doesn't exist
+        print(f"\nusername: {inp_username} doens't exists."
+              " Initiating username registering process...")
+        create_user()
